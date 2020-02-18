@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "fe43f4bf-9e06-49d1-a882-04514a492812",
+		"name": "Personio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Seed User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/v1/users/seed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "access token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\" : \"personia\",\n\"password\": \"123456\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/v1/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Hierarchy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authorization",
+						"value": "Bearer eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..SLkjlSvjifhpnWmtjB590Q.Xg7sU-tdmbJK-RpHTUFJUzv9Ksc1v43WvHSPN2IE__g.vhqK3z-JdZwc_E0gbJqDag",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8083/api/v1/hierarchy",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"v1",
+						"hierarchy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Hierarchy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Authorization",
+						"value": "Bearer eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..SLkjlSvjifhpnWmtjB590Q.Xg7sU-tdmbJK-RpHTUFJUzv9Ksc1v43WvHSPN2IE__g.vhqK3z-JdZwc_E0gbJqDag",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Pete\": \"Nick\",\n    \"Barbara\": \"Nick\",\n    \"Nick\": \"Sophie\",\n    \"Sophie\": \"Jonas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/api/v1/hierarchy",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"v1",
+						"hierarchy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
